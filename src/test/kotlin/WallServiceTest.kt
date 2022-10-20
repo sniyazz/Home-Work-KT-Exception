@@ -31,14 +31,8 @@ class WallServiceTest {
     @Test(expected = PostNotFoundException::class)
     fun shouldThrow() {
         // здесь код с вызовом функции, которая должна выкинуть PostNotFoundException
-        val postId = 2
+        val postId = 4
 
-        try {
             WallService.createComment(postId, Comments(12,true, false,true,true))
-            val commetsSize = WallService.comments.size
-            println(commetsSize)
-        } catch (e: RuntimeException){
-            throw PostNotFoundException("Post id $postId not found")
-        }
     }
 }
